@@ -1,18 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <input tpye="number" v-model="num"/>
+      <CounterGroup :num="parseInt(num)||0"></CounterGroup>
+      <SumCounter></SumCounter>
   </div>
 </template>
 
+
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import CounterGroup from "./components/CountGroup"
+import SumCounter from "./components/SumCounter"
 
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
+    name: 'app',
+    components: {CounterGroup, SumCounter},
+    data(){
+        return{
+            num:0,
+        }
+    }
+
 }
 </script>
 
