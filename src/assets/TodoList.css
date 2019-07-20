@@ -37,7 +37,17 @@ button{
     margin:5px;
 }
 
+
 ol li{
     margin:9px;
+    height:26px;
+    width: 260px;
 }
+
+/*ol li:nth-of-type(even){background-color: #f4ecec}*/
+
+.line-through {
+    text-decoration: line-through;
+}
+
 
