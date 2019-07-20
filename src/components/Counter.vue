@@ -12,15 +12,17 @@
         data() {
             return{
                 count: 0,
-                message:"hello World"
+
             }
         },
         methods:{
             sub(){
                 this.count--;
+                this.$emit('getCount',-1);
             },
             add(){
                 this.count++;
+                this.$emit('getCount',1);
             }
         }
     }
@@ -28,6 +30,6 @@
 
 <style scoped>
 button{
-    margin: 30px;
+    margin: 10px;
 }
 </style>

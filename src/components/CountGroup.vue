@@ -1,7 +1,7 @@
 <template>
     <div>
     <div v-for="index in num" :key="index">
-        <Counter></Counter>
+        <Counter v-on:getCount="getCount"></Counter>
     </div>
     </div>
 </template>
@@ -14,11 +14,19 @@ import Counter from "./components/Counter"
         name: "CountGroup",
         components: {Counter},
         props:{
-            num:Number
+            num:Number,
+            sum:Number,
         },
         data(){
             return{
-
+                sum1:0
+            }
+        },
+        methods:{
+            getCount(val){
+                this.sum1 = this.sum;
+                this.sum1+=val;
+                this.$emit("returnNumber",this.sum1);
             }
         }
     }
