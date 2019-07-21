@@ -1,21 +1,19 @@
 <template>
   <div id="app">
-      <!--<input tpye="number" v-model="num" />-->
-      <!--<CounterGroup :num="parseInt(num)||0" :sum="sum" v-on:returnNumber="returnNumber"></CounterGroup>-->
-      <!--<span>the Counter sum is:{{sum}}</span>-->
-      <TodoList></TodoList>
+      <input tpye="number" v-model="num" />
+      <CounterGroup :num="parseInt(num)||0" :sum="sum" v-on:returnNumber="returnNumber"></CounterGroup>
+      <span>the Counter sum is:{{sum}}</span>
   </div>
 </template>
 
 
 <script>
 
-//import CounterGroup from "./components/CountGroup"
-import TodoList from "./components/TodoList"
+import CounterGroup from "./components/CountGroup"
+
 export default {
     name: 'app',
-    //components: {CounterGroup, },
-    components: {TodoList, },
+    components: {CounterGroup, },
     data(){
         return{
             num:0,
