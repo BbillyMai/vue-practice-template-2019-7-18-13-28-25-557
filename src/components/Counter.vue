@@ -1,8 +1,8 @@
 <template>
     <div>
-        <button v-on:click="sub"> - </button>
+        <button v-on:click="decrease"> - </button>
         <span>{{ count }}</span>
-        <button v-on:click="add"> + </button>
+        <button v-on:click="increase"> + </button>
     </div>
 </template>
 
@@ -12,18 +12,17 @@
         data() {
             return{
                 count: 0,
-
             }
         },
         methods:{
-            sub(){
-                this.count--;
-                this.$emit('getCount',-1);
-            },
-            add(){
+            increase(){
                 this.count++;
-                this.$emit('getCount',1);
-            }
+                this.$store.commit('increase');
+            },
+            decrease(){
+                this.count--;
+                this.$store.commit('decrease');
+            },
         }
     }
 </script>

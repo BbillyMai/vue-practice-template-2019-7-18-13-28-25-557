@@ -1,8 +1,8 @@
 <template>
   <div id="app">
       <input tpye="number" v-model="num" />
-      <CounterGroup :num="parseInt(num)||0" :sum="sum" v-on:returnNumber="returnNumber"></CounterGroup>
-      <span>the Counter sum is:{{sum}}</span>
+      <CounterGroup :num="parseInt(num)||0"></CounterGroup>
+      <span>the Counter sum is:{{this.$store.state.sum}}</span>
   </div>
 </template>
 
@@ -17,16 +17,8 @@ export default {
     data(){
         return{
             num:0,
-            sum:0
         }
     },
-    methods:{
-        returnNumber(val){
-            this.sum = val;
-        },
-
-    },
-
 }
 </script>
 
